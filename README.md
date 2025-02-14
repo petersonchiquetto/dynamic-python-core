@@ -131,5 +131,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Repository
 
 [Dynamic Python Core](https://github.com/petersonchiquetto/dynamic-python-core)
-
-Enjoyed it? Give it a star! ⭐
