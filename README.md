@@ -1,62 +1,75 @@
-🐍 Dynamic Python Core
+# Dynamic Python Core 🐍 
 
 Dynamic Python Core is a modular and scalable Python project structure designed to serve as a foundation for dynamic applications. It provides a clean architecture, organized codebase, and essential configurations to streamline development.
 
-📂 Project Architecture
+## Project Architecture 📂
 
+```
 dynamic-python-core/
-├── static/             # Static assets (CSS, JavaScript, images)
-├── templates/          # HTML templates (if applicable)
+├── static/                # Static assets (CSS, JavaScript, images)
+├── templates/             # HTML templates (if applicable)
 ├── app/
-│   ├── __init__.py     # Initializes the application package
-│   ├── config.py       # Application configuration settings
-│   ├── models.py       # Database models (if using ORM)
-│   ├── routes.py       # API or web routes
-│   ├── services.py     # Business logic and service layer
-│   ├── utils.py        # Utility functions
-│   ├── controllers/    # Controllers handling requests
-│   ├── database/       # Database connection and operations
-│   └── tests/          # Unit and integration tests
-├── jogoteca.py         # Main application entry point
-├── requirements.txt    # Python dependencies
-└── README.md           # Documentation
+│   ├── __init__.py        # Initializes the application package
+│   ├── config.py          # Application configuration settings
+│   ├── models.py          # Database models (if using ORM)
+│   ├── routes.py          # API or web routes
+│   ├── services.py        # Business logic and service layer
+│   ├── utils.py           # Utility functions
+│   ├── controllers/       # Controllers handling requests
+│   ├── database/          # Database connection and operations
+│   └── tests/             # Unit and integration tests
+├── jogoteca.py            # Main application entry point
+├── requirements.txt       # Python dependencies
+└── README.md              # Documentation
+```
 
-⚙️ Installation & Setup
+## Installation & Setup ⚙️
 
-1️⃣ Clone the repository
+1. Clone the repository:
 
-git clone https://github.com/petersonchiquetto/dynamic-python-core.git
+```bash
+git clone [https://github.com/petersonchiquetto/dynamic-python-core.git](https://github.com/petersonchiquetto/dynamic-python-core.git)
 cd dynamic-python-core
+```
 
-2️⃣ Create and activate a virtual environment (recommended)
+2. Create and activate a virtual environment (recommended):
 
+```bash
 python3 -m venv venv
 source venv/bin/activate  # On Windows, use venv\Scripts\activate
+```
 
-3️⃣ Install dependencies
+3. Install dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
-4️⃣ Run the application
+4. Run the application:
 
+```bash
 python jogoteca.py
+```
 
-🚀 Core Components
+## Core Components 🚀 
 
-📌 Configuration Management (config.py)
+### Configuration Management (`config.py`) 📌
 
-The config.py file centralizes environment variables, database configurations, and application settings. Example:
+The `config.py` file centralizes environment variables, database configurations, and application settings. Example:
 
+```python
 import os
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret')
     DATABASE_URI = os.getenv('DATABASE_URI', 'sqlite:///database.db')
+```
 
-📌 Routing (routes.py)
+### Routing (`routes.py`) 📌 
 
 The routing module handles HTTP requests and directs them to the appropriate controller. Example:
 
+```python
 from flask import Flask
 
 app = Flask(__name__)
@@ -67,11 +80,13 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
+```
 
-📌 Models (models.py)
+### Models (`models.py`) 📌
 
 If using an ORM (e.g., SQLAlchemy), models define database schemas. Example:
 
+```python
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -80,31 +95,41 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     password = db.Column(db.String(120), nullable=False)
+```
 
-📌 Services (services.py)
+### Services (`services.py`) 📌
 
 The service layer separates business logic from controllers. Example:
 
+```python
 def process_data(data):
     return data.strip().lower()
+```
 
-🧪 Running Tests
+## Running Tests 🧪
 
 To ensure stability and maintainability, execute unit tests using:
 
+```bash
 pytest tests/
+```
 
-🤝 Contributing
+## Contributing 🤝 
 
 Contributions are highly welcome! To contribute:
-	1.	Fork the repository
-	2.	Create a new branch (git checkout -b feature-branch)
-	3.	Commit your changes (git commit -m "Added new feature")
-	4.	Push to the branch (git push origin feature-branch)
-	5.	Open a Pull Request
 
-📜 License
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Commit your changes (`git commit -m "Added new feature"`)
+4. Push to the branch (`git push origin feature-branch`)
+5. Open a Pull Request
+
+## License 📜 
 
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-💡 Repository: Dynamic Python Core
+## Repository
+
+[Dynamic Python Core](https://github.com/petersonchiquetto/dynamic-python-core)
+
+Enjoyed it? Give it a star! ⭐
